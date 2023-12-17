@@ -62,33 +62,45 @@
     </div>
     <div id="accountSettings"  class="profile">
         <p> Profile Settings:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
+        <img src="img/profile_page.png" style=" width: 100px;" alt="Kullanıcı" class="img-100">
         <button class="btn">Upload New Photo</button>
         <form>
             <label for="fullname">Full Name:</label><br>
             <input type="text" id="fullname" name="fullname"><br>
             <label for="email">Email:</label><br>
             <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
+      
+            <div class="language-select" >
+              <label for="fullname">Main Language</label><br>
+              <select >
+                  <option value="en" class="flag-us">English (US)</option>
+                  <option value="de" class="flag-de">German</option>
+                  <option value="es" class="flag-es">Spanish</option>
+                  <!-- Add more options with respective classes for flags -->
+              </select>   
+          </div>
+            <div class="language-select" >
+              <label for="fullname">Target Language</label><br>
+              <select >
+                  <option value="en" class="flag-us">English (US)</option>
+                  <option value="de" class="flag-de">German</option>
+                  <option value="es" class="flag-es">Spanish</option>
+                  <!-- Add more options with respective classes for flags -->
+              </select>   
+          </div>
+          <input type="submit" class="rounded-button" value="Update Information"
+            onclick="myFunction()">     
         </form>
     </div>
+
+
+
     <div id="notifications" style="display:none;" class="profile" >
         <p> Notifications:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
+        <div id="notificationBar" class="notification">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          This is your notification content.
+        </div>
     </div>
     <div id="memberships" style="display:none;" class="profile" >
         <p> Membership:</p>

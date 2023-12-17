@@ -107,3 +107,38 @@ color:#fba94b;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+.language-select {
+    width: 200px;
+    overflow: hidden; 
+}
+
+.language-select select {
+    width: 100%;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.notification {
+  padding: 20px;
+  background-color: #93be95;
+  color: rgb(255, 255, 255);
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

@@ -248,7 +248,7 @@ transition: 0.3s;
 color: black;
 }
 .search-container {
-	/* Positioning and styling for the search form */
+width: 75%;
 }
 
 .search-container form {
@@ -262,6 +262,7 @@ color: black;
 	border-radius: 20px;
 	margin-right: 5px;
 	outline: none;
+    width: 100%;
 }
 
 .search-container button {
@@ -282,25 +283,4 @@ color: black;
 	color: #333;
 	margin-left: 15px;
 	font-weight: bold;
-}
-
-/* Additional responsive adjustments as needed */
-@media (max-width: 768px) {
-	.header {
-			flex-wrap: wrap;
-	}
-
-	.search-container {
-			flex-basis: 100%;
-			order: 3;
-			margin-top: 10px;
-	}
-
-	.header-links {
-			order: 2;
-	}
-
-	.logo {
-			order: 1;
-	}
 }

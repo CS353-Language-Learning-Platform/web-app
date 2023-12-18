@@ -37,7 +37,7 @@
                 <span class="country">US</span>
                 <span class="language">Want to learn ----</span>
             </div>
-            <button class="offer-button">Offer Session</button>
+            <button class="offer-button" onclick="showDiv('offer-results')"  >Offer Session</button>
         </li>
         <!-- Yeni liste öğesi -->
         
@@ -137,20 +137,21 @@
     </ul>
   </div>
 
-  <div id="search-results" style="display:none;" class="profile">
-    <p> Search Results:</p>
-    <ul class="results-list">
-        <!-- Populate this list with search results -->
-        <li>
-            <div class="result-item">
-                <h3 class="result-title">Title of the result</h3>
-                <p class="result-description">Description of the result...</p>
-                <a href="#" class="result-link">Learn more</a>
-            </div>
-        </li>
-        <!-- Repeat the above pattern for each search result -->
-    </ul>      
-</div>
+ 
+
+  <!-- Search Results Section -->
+  <div id="offer-results" class="offer-search-results" style="display:none;" class="profile">
+  <h3>Alexandra Dolce ile bire bir ders</h3>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  </div>
 
 </div>
  

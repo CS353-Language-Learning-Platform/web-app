@@ -6,6 +6,7 @@ function showDiv(id) {
   document.getElementById('sources').style.display = 'none';
   document.getElementById('announcement-container').style.display = 'none';
   document.getElementById('search-results').style.display = 'none';
+  document.getElementById('offer-results').style.display = 'none';
 
 
   // Seçilen div'i göster

@@ -21,21 +21,16 @@
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
   <a class="navbar-brand font-weight-bold" href="#">Bilkent</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <div class="search-container">
-      <form action="/search" method="get">
+      <form >
           <input type="search" name="q" placeholder="Search">
-          <button type="submit">Search</button>
+          <button type="submit" onclick="showDiv('search-results')">Search</button>
       </form>
-  </div>   
+    </div>   
     <ul class="navbar-nav ml-auto medium-500">
        
-    
       <li class="nav-item active">
         <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -123,6 +118,22 @@
         </li>
     </ul>
   </div>
+
+  <div id="search-results" style="display:none;" class="profile">
+    <p> Search Results:</p>
+    <ul class="results-list">
+        <!-- Populate this list with search results -->
+        <li>
+            <div class="result-item">
+                <h3 class="result-title">Title of the result</h3>
+                <p class="result-description">Description of the result...</p>
+                <a href="#" class="result-link">Learn more</a>
+            </div>
+        </li>
+        <!-- Repeat the above pattern for each search result -->
+    </ul>      
+</div>
+
 </div>
  
  

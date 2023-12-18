@@ -75,11 +75,12 @@ color:#fba94b;
     
 }
 .sidebar {
-    flex: 1;
+    
     padding: 10px;
     background-color: #e9ecef;
     margin-right: 10px;
-		height: 400px;
+    height: 400px;
+    width: 340px;
 }
 .profile {
     flex: 2;

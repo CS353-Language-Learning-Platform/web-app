@@ -9,7 +9,10 @@ function showDiv(id) {
   // Seçilen div'i göster
   document.getElementById(id).style.display = 'block';
 }// Get the modal
-
+function searchStudentsOnly(id)
+{
+  document.getElementById(id).style.display = 'block';
+}
 // Declare variables in the global scope
 var modal;
 var btns;
@@ -38,11 +41,12 @@ document.getElementById("feedbackForm").onsubmit = function(event) {
     // Here you would typically send the feedback to the server
     modal.style.display = "none";
     // Optionally clear the textarea or give the user a message of success
-}
+
+
+
+  }
 
 }
-
-
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -50,5 +54,5 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+//Calendar
 
-// Handle the feedback submission

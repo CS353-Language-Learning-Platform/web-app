@@ -28,11 +28,28 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <div class="search-container">
-      <form action="/search" method="get">
-          <input type="search" name="q" placeholder="Search">
-          <button type="submit">Search</button>
+      <form >
+        <!--  action="/search" method="get"-->
+        <input type="search" name="q" placeholder="Search">
+        <button type="submit" onclick="searchStudentsOnly('studentInfo')" >Search</button>
       </form>
-  </div>   
+      <ul class="search-results-header" id="studentInfo" style="display: none">
+        <li class="search-results" >
+            <div class="info">
+                <span class="name">JACKIE</span>
+                <span class="country">US</span>
+                <span class="language">Want to learn ----</span>
+            </div>
+            <button class="offer-button">Offer Session</button>
+        </li>
+        <!-- Yeni liste öğesi -->
+        
+    </ul>
+    </div>
+    
+    <!-- Arama sonuçlarını burada listeleriz -->
+    
+       
     <ul class="navbar-nav ml-auto medium-500">
        
     
@@ -137,7 +154,7 @@
       </form>
   </div>
 </div>
-
+<!-- Date and time html-->
 
 </body>
 </html>

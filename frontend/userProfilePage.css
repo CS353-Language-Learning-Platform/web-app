@@ -79,7 +79,7 @@ color:#fba94b;
     padding: 10px;
     background-color: #e9ecef;
     margin-right: 10px;
-    
+		height: 400px;
 }
 .profile {
     flex: 2;
@@ -107,3 +107,107 @@ color:#fba94b;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+#sessions {
+	background: #e9ecef;
+	border-radius: 8px;
+	padding: 20px;
+	width: 300px; /* Or any width you prefer */
+}
+
+#sessions p {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.session-list {
+	list-style: none;
+	padding: 0;
+}
+
+.session-list li {
+	background: #ffffff;
+	margin-bottom: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.feedback-button,
+.join-button {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.feedback-button {
+	background-color: #6c757d; /* Bootstrap's secondary color */
+	color: white;
+}
+
+.join-button {
+	background-color: #28a745; /* Bootstrap's success color */
+	color: white;
+}
+
+/* This is to handle the buttons wrapping on small screens */
+@media (max-width: 360px) {
+	.session-list li {
+			flex-direction: column;
+			align-items: flex-start;
+	}
+
+	.feedback-button,
+	.join-button {
+			width: 100%;
+			margin-top: 10px;
+	}
+}
+.resources-container {
+	background: #e9ecef;
+	border-radius: 8px;
+	padding: 20px;
+	width: 300px; /* Or whatever width you prefer */
+	margin: auto;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resources-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.resource-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.resource-list li {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.resource-list li:last-child {
+	border-bottom: none;
+}
+
+.resource-list span {
+	flex-grow: 1;
+}
+
+.resource-list a {
+	text-decoration: none;
+	color: #007bff;
+}
+
+.resource-list img {
+	width: 24px;
+	height: 24px;
+}
+

@@ -50,7 +50,7 @@
     <div class="sidebar">
         <button class="btn" onclick="showDiv('sessions')"> Sessions </button>
         <button class="btn" onclick="showDiv('notifications')">Notifications</button>
-        <button class="btn" onclick="showDiv('makeAnnouncement')">Make Announcement</button>
+        <button class="btn" onclick="showDiv('announcement-container')">Make Announcement</button>
         <button class="btn" onclick="showDiv('sources')">Sources</button>
     </div>
     <div id="sessions"  class="profile">
@@ -63,36 +63,44 @@
               <!-- Repeat the above pattern for each session date -->
           </ul>      
     </div>
+
     <div id="notifications" style="display:none;" class="profile" >
-        <p> Notifications:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
+      <p> Notifications:</p>
+      <div id="notificationBar" class="notification">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        This is your notification content.
+      </div>
     </div>
-    <div id="makeAnnouncement" style="display:none;" class="profile" >
-        <p> Make Announcement:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
-    </div>
+
+    <div id="announcement-container" style="display:none;" class="profile">
+      <h2>Make Announcement</h2>
+      <form action="/post-announcement" method="post">
+          <ul class="student-list">
+              <!-- Repeat this list item for each student -->
+              <li>
+                  <label class="student-select">
+                      <input type="checkbox" name="students" value="ali-kuscu">
+                      <span class="initial">A</span>
+                      Ali Kuşçu
+                  </label>
+                  <button type="button" class="info-button">&#128712;</button>
+              </li>
+              <li>
+                <label class="student-select">
+                    <input type="checkbox" name="students" value="ali-kuscu">
+                    <span class="initial">A</span>
+                    Hamit Ivanov
+                </label>
+                <button type="button" class="info-button">&#128712;</button>
+            </li>
+
+              <!-- ... other list items ... -->
+          </ul>
+          <textarea name="announcement" rows="4" placeholder="Write your announcement here..."></textarea>
+          <button type="submit" class="submit-button">Send Announcement</button>
+      </form>
+  </div>
+  
 
     <div id="sources"class="resources-container" style="display:none;" class="profile" >
       <p> Sources:</p>

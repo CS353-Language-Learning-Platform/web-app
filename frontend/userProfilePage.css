@@ -512,3 +512,48 @@ textarea {
 			margin-top: 10px;
 	}
 }
+.search-results {
+
+	list-style-type: none;
+	padding: 0;
+	background-color: #8a7979;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	height: 50px;
+  }
+  .search-results-header{
+	z-index: 1000; 
+	position: absolute;
+	list-style-type: none;
+	padding: 0;
+	margin-top: 2px;
+	width: 43.2%;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .search-results{
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px; /* Bu değer, köşelerin ne kadar yuvarlak olacağını belirler */
+}
+.search-results .info {
+    display: flex;
+    gap: 10px;
+}
+
+.search-results .offer-button {
+    background-color: #4CAF50; /* Butonun arka plan rengi */
+    border: none;
+    color: white; /* Butonun yazı rengi */
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px; /* Butonun köşelerini yuvarlar */
+}
+

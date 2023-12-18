@@ -59,6 +59,7 @@
         <button class="btn" onclick="showDiv('accountSettings')">Account Settings</button>
         <button class="btn" onclick="showDiv('notifications')">Notifications</button>
         <button class="btn" onclick="showDiv('memberships')">Memberships</button>
+        <button class="btn" onclick="showDiv('student-session-container')">Sessions</button>
     </div>
     <div id="accountSettings"  class="profile">
         <p> Profile Settings:</p>
@@ -117,6 +118,25 @@
             onclick="myFunction()">
         </form>
     </div>
+    <div id="student-session-container"  style="display:none;" class="profile">
+      <h2>Student Sessions</h2>
+      <ul class="student-session-list">
+          <!-- Student Session Item -->
+          <li class="student-session-item">
+              <span class="initials">P</span>
+              <div class="student-session-info">
+                  <span>Paul Eliot/Teacher</span>
+                  <span class="student-time">15 mins</span>
+              </div>
+              <div class="student-session-actions">
+                  <img src="path-to-canada-flag.png" alt="Canadian Flag">
+                  <button class="student-rate-button">Rate</button>
+              </div>
+          </li>
+          <!-- Repeat for each student session -->
+      </ul>
+  </div>
+  
 </div>
 
 </body>

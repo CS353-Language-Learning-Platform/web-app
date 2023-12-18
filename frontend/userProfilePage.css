@@ -437,3 +437,78 @@ textarea {
 .submit-feedback:hover {
     background-color: #45a049;
 }
+
+#student-session-container {
+	background: #f0f0f0;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.student-session-list {
+	list-style: none;
+	padding: 0;
+}
+
+.student-session-item {
+	background: white;
+	margin-bottom: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.initials {
+	background: #007bff;
+	color: white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30px;
+	margin-right: 10px;
+}
+
+.student-session-info {
+	flex-grow: 1;
+}
+
+.student-session-info .student-time {
+	display: block;
+	color: #999;
+}
+
+.student-session-actions {
+	display: flex;
+	align-items: center;
+}
+
+.student-session-actions img {
+	width: 32px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.student-rate-button {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.student-rate-button:hover {
+	background-color: #218838;
+}
+
+/* Additional responsive adjustments as needed */
+@media (max-width: 768px) {
+	.student-session-item {
+			flex-wrap: wrap;
+	}
+
+	.student-session-actions {
+			margin-top: 10px;
+	}
+}

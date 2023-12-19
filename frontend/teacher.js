@@ -9,9 +9,21 @@ function showDiv(id) {
   // Seçilen div'i göster
   document.getElementById(id).style.display = 'block';
 }// Get the modal
+function offerSession(id) {
+  document.getElementById('sessions').style.display = 'none';
+  document.getElementById('notifications').style.display = 'none';
+  document.getElementById('sources').style.display = 'none';
+  document.getElementById('announcement-container').style.display = 'none';
+  document.getElementById('offer-results').style.display = 'none';
+  document.getElementById('studentInfo').style.display = 'none';
+
+  // Seçilen div'i göster
+  document.getElementById(id).style.display = 'block';
+}
 function searchStudentsOnly(id)
 {
   document.getElementById(id).style.display = 'block';
+  
 }
 // Declare variables in the global scope
 var modal;
@@ -42,9 +54,8 @@ document.getElementById("feedbackForm").onsubmit = function(event) {
     // Here you would typically send the feedback to the server
     modal.style.display = "none";
     // Optionally clear the textarea or give the user a message of success
-
-
   }
+
   var timeSlots = document.getElementsByClassName("time-slot");
   for (var i = 0; i < timeSlots.length; i++) {
     timeSlots[i].onclick = function() {
@@ -58,5 +69,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-//Calendar
 

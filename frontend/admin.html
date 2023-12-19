@@ -13,9 +13,10 @@
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="home.css">
     <link rel="stylesheet" type="text/css" href="userProfilePage.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
 
     <title>Learn language school</title>
-    <script src="userProfilePage.js"></script>
+    <script src="admin.js"></script>
   </head>
   <body>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,30 +26,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="search-container">
+    <form >
+        <input type="search" name="q" placeholder="Search">
+        <button type="submit" onclick="showDiv('search-results')">Search</button>
+    </form>
+  </div> 
     <ul class="navbar-nav ml-auto medium-500">
       <li class="nav-item active">
         <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="userProfilePage.html">Profile</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Businesses
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">For University</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="admin.html">Log out</a>
       </li>
     </ul>    
   </div>
@@ -56,55 +45,72 @@
 </nav>
 <div class="container">
     <div class="sidebar">
-        <button class="btn" onclick="showDiv('accountSettings')">Account Settings</button>
-        <button class="btn" onclick="showDiv('notifications')">Notifications</button>
-        <button class="btn" onclick="showDiv('memberships')">Memberships</button>
+        <button class="btn" onclick="showDiv('langlearner')">Language Learners</button>
+        <button class="btn" onclick="showDiv('teacher')">Teachers</button>
     </div>
-    <div id="accountSettings"  class="profile">
-        <p> P:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
+
+    <div id="langlearner"  >
+      <table class="lang-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Native Languages</th>
+            <th>Interested Languages</th>
+            <th></th> <!-- Empty header for the block column -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID#123456</td>
+            <td>Mary Ann</td>
+            <td>[Turkish]</td>
+            <td>[English, Spanish]</td>
+            <td><button class="block-button">BLOCK</button></td>
+          </tr>
+          <!-- Repeat rows for each entry -->
+          <tr>
+            <td>ID#123457</td>
+            <td>Jane Doe</td>
+            <td>[Turkish]</td>
+            <td>[Spanish]</td>
+            <td><button class="block-button">BLOCK</button></td>
+          </tr>
+          <!-- ... more rows ... -->
+        </tbody>
+      </table>
     </div>
-    <div id="notifications" style="display:none;" class="profile" >
-        <p> Notifications:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
+
+    <div id="teacher" style="display:none;" >
+      <table class="lang-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Proficiency Language</th>
+            <th></th> <!-- Empty header for the block column -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID#123456</td>
+            <td>Hamit Ivanov Ann</td>
+            <td>[Turkish]</td>
+            <td><button class="block-button">BLOCK</button></td>
+          </tr>
+          <!-- Repeat rows for each entry -->
+          <tr>
+            <td>ID#123457</td>
+            <td>Mustafa Kayar</td>
+            <td>[Turkish]</td>
+            <td><button class="block-button">BLOCK</button></td>
+          </tr>
+          <!-- ... more rows ... -->
+        </tbody>
+      </table>
     </div>
-    <div id="memberships" style="display:none;" class="profile" >
-        <p> Membership:</p>
-        <img src="img/profile_page.png" style=" width: 200px;" alt="Kullanıcı" class="img-100">
-        <button class="btn">Upload New Photo</button>
-        <form>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="language">Language:</label><br>
-            <input type="text" id="language" name="language"><br>
-            <input type="submit" class="rounded-button" value="Update Information"
-            onclick="myFunction()">
-        </form>
-    </div>
+    
+
 </div>
 
 </body>

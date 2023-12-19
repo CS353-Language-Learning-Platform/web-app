@@ -24,19 +24,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <div class="search-container">
-      <form >
+      <div class="info">
         <!--  action="/search" method="get"-->
+        <div class="search-button-place">
         <input type="search" name="q" placeholder="Search">
-        <button type="submit" onclick="searchStudentsOnly('studentInfo')" >Search</button>
+        <button onclick="searchStudentsOnly('studentInfo')">Search</button>
+      </div>
+      </div>
       </form>
-      <ul class="search-results-header" id="studentInfo" >
+      <ul class="search-results-header" id="studentInfo" style="display: none;" >
         <li class="search-results" >
             <div class="info">
                 <span class="name">JACKIE</span>
                 <span class="country">US</span>
                 <span class="language">Want to learn ----</span>
             </div>
-            <button class="offer-button" onclick="showDiv('offer-results')"  >Offer Session</button>
+            <button class="offer-button" onclick="offerSession('offer-results')"  >Offer Session</button>
         </li>
         <!-- Yeni liste öğesi -->
         

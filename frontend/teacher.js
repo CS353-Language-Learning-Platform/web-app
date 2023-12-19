@@ -5,10 +5,7 @@ function showDiv(id) {
   document.getElementById('notifications').style.display = 'none';
   document.getElementById('sources').style.display = 'none';
   document.getElementById('announcement-container').style.display = 'none';
-  document.getElementById('search-results').style.display = 'none';
   document.getElementById('offer-results').style.display = 'none';
-
-
   // Seçilen div'i göster
   document.getElementById(id).style.display = 'block';
 }// Get the modal
@@ -33,10 +30,11 @@ window.onload = function() {
       modal.style.display = "block";
     }
   }
-
   span.onclick = function() {
     modal.style.display = "none";
 }
+
+
 document.getElementById("feedbackForm").onsubmit = function(event) {
     event.preventDefault(); // Prevent the form from submitting through the browser
     var feedback = document.getElementById("feedbackText").value;
@@ -46,11 +44,14 @@ document.getElementById("feedbackForm").onsubmit = function(event) {
     // Optionally clear the textarea or give the user a message of success
 
 
-
   }
-
+  var timeSlots = document.getElementsByClassName("time-slot");
+  for (var i = 0; i < timeSlots.length; i++) {
+    timeSlots[i].onclick = function() {
+      document.getElementById('offer-results').style.display = 'none';
+    }
+  }
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {

@@ -1,13 +1,12 @@
-package com.example.backend.models;
+package com.example.backend.requests;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 
 @Getter
-@Setter
-public class Admin {
+public class AdminAddRequest {
+
     private Long userId;
     private Date startDate;
 }

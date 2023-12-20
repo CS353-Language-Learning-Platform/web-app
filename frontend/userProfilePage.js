@@ -26,7 +26,9 @@ function buySession(id) {
   // Seçilen div'i göster
   document.getElementById(id).style.display = 'block';
 }
-
+function follow(id) {
+  document.getElementById('teacherInfo').style.display = 'none';
+}
   var modal;
 
 // Function to show the buy session modal
@@ -35,7 +37,6 @@ window.onload = function() {
   var buttons = document.getElementsByClassName("time-slot");
   var myFunction = function() {
     modal.style.display = 'block';
-
   };
   for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', myFunction, false);

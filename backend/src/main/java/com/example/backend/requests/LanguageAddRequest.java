@@ -1,12 +1,9 @@
-package com.example.backend.models;
-
+package com.example.backend.requests;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
-public class Language {
+public class LanguageAddRequest {
 
     private Integer languageId;
     private String languageName;

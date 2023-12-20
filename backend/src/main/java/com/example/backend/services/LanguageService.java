@@ -1,9 +1,11 @@
 package com.example.backend.services;
 
 
+import com.example.backend.dto.TargetLanguageInfoDTO;
 import com.example.backend.models.Language;
 import com.example.backend.repositories.LanguageRepository;
 import com.example.backend.requests.LanguageAddRequest;
+import com.example.backend.requests.TargetLanguageAddRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +48,13 @@ public class LanguageService {
         language.setLanguageName(request.getLanguageName());
 
         languageRepository.addLanguage(language);
+    }
+
+    public List<TargetLanguageInfoDTO> getAllTargetLanguagesByUserId(Long userId) {
+        return languageRepository.getAllTargetLanguagesByUserId(userId);
+    }
+
+    public void addTargetLanguage(TargetLanguageAddRequest request) {
+        languageRepository.addTargetLanguage(request);
     }
 }

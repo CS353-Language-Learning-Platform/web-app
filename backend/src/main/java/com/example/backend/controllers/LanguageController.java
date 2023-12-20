@@ -1,7 +1,9 @@
 package com.example.backend.controllers;
 
+import com.example.backend.dto.TargetLanguageInfoDTO;
 import com.example.backend.models.Language;
 import com.example.backend.requests.LanguageAddRequest;
+import com.example.backend.requests.TargetLanguageAddRequest;
 import com.example.backend.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,4 +35,16 @@ public class LanguageController {
     public void addLanguage(@RequestBody LanguageAddRequest request) {
         languageService.addLanguage(request);
     }
+
+    @GetMapping("/target/{userId}")
+    public List<TargetLanguageInfoDTO> getAllTargetLanguagesByUserId(@PathVariable Long userId) {
+        return languageService.getAllTargetLanguagesByUserId(userId);
+    }
+
+    @PostMapping("/target")
+    public void addTargetLanguage(@RequestBody TargetLanguageAddRequest request) {
+        languageService.addTargetLanguage(request);
+    }
+
+
 }

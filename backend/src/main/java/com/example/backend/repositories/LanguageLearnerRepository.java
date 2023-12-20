@@ -63,4 +63,10 @@ public class LanguageLearnerRepository {
             return learner;
         };
     }
+
+    public boolean learnerExistsById(Long userId) {
+        String sql = "SELECT COUNT(*) FROM language_learner WHERE user_id = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, new Object[]{userId}, Integer.class);
+        return count != null && count > 0;
+    }
 }

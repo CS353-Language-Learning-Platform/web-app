@@ -33,6 +33,13 @@ function follow(id) {
 
 // Function to show the buy session modal
 window.onload = function() {
+
+  let user = JSON.parse(localStorage.getItem('user'));
+
+      // Verileri HTML içerisine yerleştir
+      document.getElementById('fullname').value = user.name;
+      document.getElementById('email').value = user.email;
+ 
   modal = document.getElementById("buySessionModal");
   var buttons = document.getElementsByClassName("time-slot");
   var myFunction = function() {
@@ -47,5 +54,4 @@ window.onclick = function(event) {
       modal.style.display = "none";
   }
 }
-
 

@@ -1,12 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     // Sayfa yüklendiğinde çağrılacak fonksiyon
-    //addUser();
-    getAllUsers();
-    addUser();
+ 
 });
-
+*/
 function getAllUsers() {
     // Sunucudan tüm kullanıcı verilerini al
+    
     fetch('http://localhost:8080/users')
         .then(response => response.json())
         .then(users => {
@@ -21,17 +20,21 @@ function getAllUsers() {
         .catch(error => console.error('Hata:', error));
 }
 function addUser() {
+    let name = document.getElementById('username').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+
     let userAddRequest = {
-         // Make sure to include all required properties
-        name: "saas",
-        email: "z@31sdz",
-        password: "password123",
-        birthDate:  new Date("2022-03-25"),
-        biography: "Some bio",
-        nationality: "Some nationality",
+        name: name,
+        email: email,
+        password: password,
+        birthDate: new Date("2022-03-25"),
+        biography: "noBio",
+        nationality: "nationality",
     };
- 
-     console.log(JSON.stringify(userAddRequest));
+    var userType = document.querySelector('select').value;
+    console.log(userType);
      fetch('http://localhost:8080/users', {
         method: 'POST',
         headers: {
@@ -42,7 +45,10 @@ function addUser() {
     .then(response => {
         console.log('Response Headers:', response.headers);
     })
-    .then(data => console.log('Response Data:', data))
-    .catch((error) => console.error('Hata:', error));
+    .then(data => {
+        console.log(data.userId);
+})
+.catch((error) => console.error('Hata:', error));
+
     
 }

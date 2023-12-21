@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 public class TargetLanguageInfoDTO {
     private Integer languageId;
-    private String languageName;
+    private Integer learnerId;
     private String proficiencyLevel;
 }

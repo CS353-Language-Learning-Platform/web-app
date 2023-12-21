@@ -1,5 +1,28 @@
 function myFunction() {
-    alert("Butona tıklandı!");
+  var targetLanguageAddRequest = {
+    languageId: 1,
+    learnerId: 1,
+    proficiencyLevel: "Medium"
+  };
+  
+  fetch('http://localhost:8080/languages/target', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(targetLanguageAddRequest)
+  })
+  .then(response => 
+  {
+      console.log('Response Headers:', response.headers);
+  })
+  .then(data => {
+      console.log('Response Data:', data);
+     
+  })
+  .catch((error) => console.error('Hata:', error));
+
+
   }
   function showDiv(id) {
     // Tüm div'leri gizle

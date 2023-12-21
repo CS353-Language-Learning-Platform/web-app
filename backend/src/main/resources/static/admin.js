@@ -13,10 +13,8 @@ function showInfo() {
     .then(response => response.json())
     .then(users => {
         // Kullanıcıyı bul
-        console.log(users.languageId);
-        console.log(users.learnerId);
-        console.log(users.proficiencyLevel);
-    
+        console.log(users[0]);
+
       })
       .catch((error) => console.error('Hata:', error));
 

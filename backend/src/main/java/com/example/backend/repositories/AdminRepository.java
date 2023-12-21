@@ -19,7 +19,7 @@ public class AdminRepository {
     }
 
     public Admin getAdminById(Long userId) {
-        String sql = "SELECT user_id FROM admin WHERE user_id = ?";
+        String sql = "SELECT user_id, start_date FROM admin WHERE user_id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{userId}, adminRowMapper());
     }
 
@@ -27,6 +27,7 @@ public class AdminRepository {
         return (rs, rowNum) -> {
             Admin admin = new Admin();
             admin.setUserId(rs.getLong("user_id"));
+            admin.setStartDate(rs.getDate("start_date"));
             return admin;
         };
     }

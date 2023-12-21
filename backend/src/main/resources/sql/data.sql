@@ -1,6 +1,3 @@
--- INSERT INTO user (id, name, email, password) VALUES (1, 'Berkay', 'Akkus', '123456');
--- INSERT INTO user (name, email, password) VALUES ('Serkan', 'Akkus', '456123');
--- INSERT INTO user (name, email, password) VALUES ('Aysema', 'Kasap', '1321654321');
 
 INSERT INTO user (name, email, biography, nationality, birth_date, password)
 VALUES ('John Doe', 'johndoe@example.com', 'Aspiring language learner', 'USA', '1990-01-01', 'secret_password');
@@ -8,11 +5,22 @@ VALUES ('John Doe', 'johndoe@example.com', 'Aspiring language learner', 'USA', '
 INSERT INTO language_learner (user_id, last_seen_time)
 VALUES (LAST_INSERT_ID(), NOW());
 
+
+INSERT INTO language (language_name)
+VALUES ('Turkish');
+INSERT INTO language (language_name)
+VALUES ('English');
+INSERT INTO language (language_name)
+VALUES ('French');
+INSERT INTO language (language_name)
+VALUES ('Russian');
+
 INSERT INTO user (name, email, biography, nationality, birth_date, password)
 VALUES ('Berkay Akkuş', 'berkayakkus@example.com', 'I am Berkay', 'TR', '2000-04-26', 'password');
 -- This will directly use the LAST_INSERT_ID() in the next INSERT statement
 INSERT INTO language_learner (user_id, last_seen_time)
 VALUES (LAST_INSERT_ID(), NOW());
+
 
 
 -- Insert an appointment for the user with id 1 and id 2 here is the database table:

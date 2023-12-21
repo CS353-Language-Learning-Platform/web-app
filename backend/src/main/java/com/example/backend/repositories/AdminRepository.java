@@ -33,7 +33,7 @@ public class AdminRepository {
     }
 
     public List<Admin> getAllAdmins() {
-        String sql = "SELECT user_id FROM admin";
+        String sql = "SELECT * FROM admin";
         return jdbcTemplate.query(sql, adminRowMapper());
     }
 

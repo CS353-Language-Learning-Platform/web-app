@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="teacher.css">
+
+    <title>Learn language school</title>
+    <script src="teacher.js"></script>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container">
+  <a class="navbar-brand font-weight-bold" href="#">Bilkent</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="search-container">
+      <div class="info">
+        <!--  action="/search" method="get"-->
+        <div class="search-button-place">
+        <input type="search" name="q" placeholder="Search">
+        <button onclick="searchStudentsOnly('studentInfo')">Search</button>
+      </div>
+      </div>
+      </form>
+      <ul class="search-results-header" id="studentInfo" style="display: none;" >
+        <li class="search-results" >
+            <div class="info">
+                <span class="name">JACKIE</span>
+                <span class="country">US</span>
+                <span class="language">Want to learn ----</span>
+            </div>
+            <button class="offer-button" onclick="offerSession('offer-results')"  >Offer Session</button>
+        </li>
+        <!-- Yeni liste öğesi -->
+        
+    </ul>
+    </div>
+    
+    <!-- Arama sonuçlarını burada listeleriz -->
+    
+       
+    <ul class="navbar-nav ml-auto medium-500">
+       
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Profile Settings</a>
+      </li>
+    </ul>    
+  </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="sidebar">
+        <button class="btn" onclick="showDiv('sessions')"> Sessions </button>
+        <button class="btn" onclick="showDiv('notifications')">Notifications</button>
+        <button class="btn" onclick="showDiv('announcement-container')">Make Announcement</button>
+        <button class="btn" onclick="showDiv('sources')">Sources</button>
+    </div>
+    <div id="sessions"  class="profile">
+        <p> Sessions:</p>
+          <ul class="session-list">
+              <li>Session Date: 05/11/2023 19.00 <button class="feedback-button">Give Feedback</button></li>
+              <li>Session Date: 06/11/2023 22.00 <button class="feedback-button">Give Feedback</button></li>
+              <li>Session Date: 10/11/2023 15.00 <button class="feedback-button">Give Feedback</button></li>
+              <li>Session Date: 10/11/2023 21.00 <button class="join-button">Join</button></li>
+              <!-- Repeat the above pattern for each session date -->
+          </ul>      
+    </div>
+
+    <div id="notifications" style="display:none;" class="profile" >
+      <p> Notifications:</p>
+      <div id="notificationBar" class="notification">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        This is your notification content.
+      </div>
+    </div>
+
+    <div id="announcement-container" style="display:none;" class="profile">
+      <h2>Make Announcement</h2>
+      <form action="/post-announcement" method="post">
+          <ul class="student-list">
+              <!-- Repeat this list item for each student -->
+              <li>
+                  <label class="student-select">
+                      <input type="checkbox" name="students" value="ali-kuscu">
+                      <span class="initial">A</span>
+                      Ali Kuşçu
+                  </label>
+                  <button type="button" class="info-button">&#128712;</button>
+              </li>
+              <li>
+                <label class="student-select">
+                    <input type="checkbox" name="students" value="ali-kuscu">
+                    <span class="initial">A</span>
+                    Hamit Ivanov
+                </label>
+                <button type="button" class="info-button">&#128712;</button>
+            </li>
+
+              <!-- ... other list items ... -->
+          </ul>
+          <textarea name="announcement" rows="4" placeholder="Write your announcement here..."></textarea>
+          <button type="submit" class="submit-button">Send Announcement</button>
+      </form>
+  </div>
+  
+
+    <div id="sources" class="resources-container" style="display:none;" class="profile" >
+      <p> Sources:</p>
+      <ul class="resource-list">
+        <li>
+            <span>GrammarPractice.pdf</span>
+            <a href="path-to-resource/GrammarPractice.pdf" download><img src="download-icon.png" alt="Download"></a>
+        </li>
+        <li>
+            <span>B2WordList.word</span>
+            <a href="path-to-resource/B2WordList.docx" download><img src="download-icon.png" alt="Download"></a>
+        </li>
+        <li>
+            <span>PearsonLearningMaterial.pdf</span>
+            <a href="path-to-resource/PearsonLearningMaterial.pdf" download><img src="download-icon.png" alt="Download"></a>
+        </li>
+        <li>
+            <span>ListeningPractice.mp3</span>
+            <a href="path-to-resource/ListeningPractice.mp3" download><img src="download-icon.png" alt="Download"></a>
+        </li>
+        <li>
+          <button class="btn"> add sources</button>
+        </li>
+    </ul>
+  </div>
+
+ 
+
+  <!-- Offer lesson-->
+  <div id="offer-results" class="offer-search-results" style="display:none;" class="profile">
+  <h3>Alexandra Dolce ile bire bir ders</h3>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  <p>24 Ara 2023</p>
+  <div class="time-slots">
+    <button type="button" class="time-slot">3:00 PM</button>
+    <button type="button" class="time-slot">3:30 PM</button>
+    <button type="button" class="time-slot">4:00 PM</button>
+    <button type="button" class="time-slot">4:30 PM</button>
+    <button type="button" class="time-slot">5:00 PM</button>
+    <button type="button" class="time-slot">5:30 PM</button>
+  </div>
+  </div>
+
+</div>
+ <!-- Feedback Modal Popups-->
+ 
+<!-- Feedback Modal Popups-->
+<div id="feedbackModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="feedbackForm">
+          <h2>Feedback</h2>
+          <textarea id="feedbackText" name="feedback" placeholder="Write your feedback here..." rows="5"></textarea>
+          <button type="submit" class="submit-feedback">Submit Feedback</button>
+      </form>
+  </div>
+</div>
+<!-- Date and time html-->
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="userProfilePage.css">
+
+    <title>Learn language school</title>
+    <script src="userProfilePage.js"></script>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container">
+  <a class="navbar-brand font-weight-bold" href="#">Bilkent</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+
+  <div class="search-container">
+    <div class="info">
+      <!--  action="/search" method="get"-->
+      <div class="search-button-place">
+      <input type="search" name="q" placeholder="Search">
+      <button onclick="searchTeachersOnly('teacherInfo')">Search</button>
+    </div>
+    </div>
+    </form>
+    <ul class="search-results-header" id="teacherInfo" style="display: none;" >
+      <li class="search-results" >
+          <div class="info">
+              <span class="name">Byrne/Teacher</span>
+              <span class="country">Breverton</span>
+              <span class="language">-English</span>
+          </div>
+          <button class="buy-button" onclick="buySession('buy-results')"  > Buy Session</button>
+          <button class="buy-button" onclick="buySession('buy-results')"  >  Sources</button>
+        </li>
+        <li class="search-results" >
+          <div class="info">
+              <span class="name">Byrne/Student</span>
+              <span class="country">Breverton</span>
+              <span class="language">Target->English</span>
+          </div>
+          <button class="buy-button" onclick="buySession('buy-results')"  > Invite Session</button>
+          <button class="buy-button" onclick="follow('')" > Follow </button>
+        </li>
+      <!-- Yeni liste öğesi -->     
+  </ul>
+  </div>
+    <ul class="navbar-nav ml-auto medium-500">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="userProfilePage.html">Profile</a>
+      </li>
+    </ul>    
+  </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="sidebar">
+        <button class="btn" onclick="showDiv('accountSettings')">Account Settings</button>
+        <button class="btn" onclick="showDiv('notifications')">Notifications</button>
+        <button class="btn" onclick="showDiv('memberships')">Memberships</button>
+        <button class="btn" onclick="showDiv('student-session-container')">Sessions</button>
+    </div>
+    <div id="accountSettings"  class="profile">
+        <p> Profile Settings:</p>
+        <img src="img/profile_page.png" style=" width: 100px;" alt="Kullanıcı" class="img-100">
+        <button class="btn">Upload New Photo</button>
+        <form>
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+      
+            <div class="language-select" >
+              <label for="fullname">Main Language</label><br>
+              <select >
+                  <option value="en" class="flag-us">English (US)</option>
+                  <option value="de" class="flag-de">German</option>
+                  <option value="es" class="flag-es">Spanish</option>
+                  <!-- Add more options with respective classes for flags -->
+              </select>   
+          </div>
+            <div class="language-select" >
+              <label for="fullname">Target Language</label><br>
+              <select >
+                  <option value="en" class="flag-us">English (US)</option>
+                  <option value="de" class="flag-de">German</option>
+                  <option value="es" class="flag-es">Spanish</option>
+                  <!-- Add more options with respective classes for flags -->
+              </select>   
+              <label for="fullname">Level</label><br>
+              <select >
+                  <option value="en" class="flag-us">Beginner</option>
+                  <option value="de" class="flag-de">Average</option>
+                  <option value="es" class="flag-es">Fluent</option>
+                  <!-- Add more options with respective classes for flags -->
+              </select>   
+          </div>
+
+          <input type="submit" class="rounded-button" value="Update Information"
+            onclick="myFunction()">     
+        </form>
+    </div>
+
+    <div id="notifications" style="display:none;" class="profile" >
+        <p> Notifications:</p>
+        <div id="notificationBar" class="notification">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          This is your notification content.
+        </div>
+    </div>
+    
+    <div id="memberships"class="resources-container" style="display:none;" class="profile" >
+     
+      <ul class="resource-list">
+        <p> Teacher's name</p>
+        <li>
+            <span>GrammarPractice.pdf</span>
+            <a href="path-to-resource/GrammarPractice.pdf" download><img src="download-icon.png" alt="Download"></a>
+        </li>
+    </ul>
+    
+  </div>
+
+    <div id="student-session-container"  style="display:none;" class="profile">
+      <h2>Student Sessions</h2>
+      <ul class="student-session-list">
+          <!-- Student Session Item -->
+          <li class="student-session-item">
+              <span class="initials">P</span>
+              <div class="student-session-info">
+                  <span>Paul Eliot/Teacher</span>
+                  <span class="student-time">15 mins</span>
+              </div>
+              <div class="student-session-actions">
+                  <img src="path-to-canada-flag.png" alt="Canadian Flag">
+                  <button class="student-rate-button">Rate</button>
+              </div>
+          </li>
+          <li class="student-session-item">
+            <span class="initials">P</span>
+            <div class="student-session-info">
+                <span>Paul Eliot/Teacher</span>
+                <span class="student-time">3:30</span>
+            </div>
+            <div class="student-session-actions">
+                <img src="path-to-canada-flag.png" alt="Canadian Flag">
+                <button class="student-rate-button">Join</button>
+            </div>
+        </li>
+          <!-- Repeat for each student session -->
+      </ul>
+  </div>
+  <div id="search-results" style="display:none;" class="profile">
+    <p> Search Results:</p>
+    <ul class="results-list">
+        <!-- Populate this list with search results -->
+        <li>
+            <div class="result-item">
+                <h3 class="result-title">Title of the result</h3>
+                <p class="result-description">Description of the result...</p>
+                <a href="#" class="result-link">Learn more</a>
+            </div>
+        </li>
+        <!-- Repeat the above pattern for each search result -->
+    </ul>      
+</div>
+
+  <!-- Offer lesson-->
+  <div id="buy-results" class="buy-search-results" style="display:none;" class="profile">
+    <h3>Alexandra Dolce ile bire bir ders</h3>
+    <p>24 Ara 2023</p>
+    <div class="time-slots">
+      <button type="button" class="time-slot">3:00 PM</button>
+      <button type="button" class="time-slot">3:30 PM</button>
+      <button type="button" class="time-slot">4:00 PM</button>
+      <button type="button" class="time-slot">4:30 PM</button>
+      <button type="button" class="time-slot">5:00 PM</button>
+      <button type="button" class="time-slot">5:30 PM</button>
+    </div>
+    <p>24 Ara 2023</p>
+    <div class="time-slots">
+      <button type="button" class="time-slot">3:00 PM</button>
+      <button type="button" class="time-slot">3:30 PM</button>
+      <button type="button" class="time-slot">4:00 PM</button>
+      <button type="button" class="time-slot">4:30 PM</button>
+      <button type="button" class="time-slot">5:00 PM</button>
+      <button type="button" class="time-slot">5:30 PM</button>
+    </div>
+    <p>24 Ara 2023</p>
+    <div class="time-slots">
+      <button type="button" class="time-slot">3:00 PM</button>
+      <button type="button" class="time-slot">3:30 PM</button>
+      <button type="button" class="time-slot">4:00 PM</button>
+      <button type="button" class="time-slot">4:30 PM</button>
+      <button type="button" class="time-slot">5:00 PM</button>
+      <button type="button" class="time-slot">5:30 PM</button>
+    </div>
+    <p>24 Ara 2023</p>
+    <div class="time-slots">
+      <button type="button" class="time-slot">3:00 PM</button>
+      <button type="button" class="time-slot">3:30 PM</button>
+      <button type="button" class="time-slot">4:00 PM</button>
+      <button type="button" class="time-slot">4:30 PM</button>
+      <button type="button" class="time-slot">5:00 PM</button>
+      <button type="button" class="time-slot">5:30 PM</button>
+    </div>
+    <p>24 Ara 2023</p>
+    <div class="time-slots">
+      <button type="button" class="time-slot">3:00 PM</button>
+      <button type="button" class="time-slot">3:30 PM</button>
+      <button type="button" class="time-slot">4:00 PM</button>
+      <button type="button" class="time-slot">4:30 PM</button>
+      <button type="button" class="time-slot">5:00 PM</button>
+      <button type="button" class="time-slot">5:30 PM</button>
+    </div>
+    </div>
+
+    <div id="buySessionModal" class="modal2profile" style="display:none;">
+      <!-- Modal content -->
+      <div class="modal2-content">
+        <span class="close">&times;</span>
+        <p>Do you want to buy this session 12$ </p>
+        <button id="yesButton" class="modal2-button">Yes</button>
+        <button id="noButton" class="modal2-button">No</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

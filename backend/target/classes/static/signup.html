@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="signup.js"></script>
+
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <!-- You can replace this div with an actual image if you have one -->
+            <p>LOGO</p>
+        </div>
+        <h1>User Data</h1>
+    <ul id="user-list"></ul>
+        <form >
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="username" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password-confirm" name="password-confirm" placeholder="password (confirm)" required>
+            </div>
+            <div class="input-group" style="margin-bottom: 10px;" >    
+                <select >
+                    <option value="en" class="flag-us">Student</option>
+                    <option value="de" class="flag-de">Teacher</option>
+                    <!-- Add more options with respective classes for flags -->
+                </select>   
+            </div>
+            <button type="button" onclick="adduser()" >Create</button>
+            <div class="login-link">
+                Already have an account?<a href="login.html">Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

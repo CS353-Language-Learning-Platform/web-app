@@ -71,7 +71,6 @@ function addUser() {
             })
             .then(data => {
         
-              //  window.location.href = "http://localhost:8080/login.html";
             }).catch(error => console.error('Hata:', error));
          
          }
@@ -93,11 +92,10 @@ function addUser() {
             })
             .then(data => {
         
-              //  window.location.href = "http://localhost:8080/login.html";
             }).catch(error => console.error('Hata:', error));
          
          }
-       
+         window.location.href = "http://localhost:8080/login.html";
     })
     .catch(error => console.error('Hata:', error));
       

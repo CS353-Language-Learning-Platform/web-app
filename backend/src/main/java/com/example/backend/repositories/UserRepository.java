@@ -100,7 +100,7 @@ public class UserRepository {
             user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setBiography(rs.getString("biography"));
-
+            user.setPassword(rs.getString("password"));
             return user;
         };
     }

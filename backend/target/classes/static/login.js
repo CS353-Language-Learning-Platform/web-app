@@ -33,8 +33,29 @@ fetch('http://localhost:8080/users')
 
         // Eğer kullanıcı varsa ve şifre eşleşiyorsa, bir mesaj logla
         if (user && user.password === password) {
-            localStorage.setItem('user', JSON.stringify(user));
-            window.location.href = "http://localhost:8080/userProfilePage.html";
+            
+            console.log(user.userId);
+            fetch('http://localhost:8080/learners')
+            .then(response => response.json())
+            .then(learners => {
+                // Verileri HTML içerisine yerleştir
+                let learner = learners.find(learner => learner.userId === user.userId)
+
+                localStorage.setItem('user', JSON.stringify(user));
+                if(learner)
+                {
+                    window.location.href = "http://localhost:8080/userProfilePage.html";
+                }
+                else
+                {
+                    window.location.href = "http://localhost:8080/teacher.html";
+                }
+
+
+            })
+            .catch(error => console.error('Hata:', error));
+
+
         } else {
             alert('Kullanıcı adı veya şifre yanlış');
         }

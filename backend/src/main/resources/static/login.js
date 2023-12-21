@@ -21,9 +21,9 @@ async function loginUser() {
 
     
     let email = document.getElementById('email').value;
-let password = document.getElementById('password').value;
+    let password = document.getElementById('password').value;
 
-fetch('http://localhost:8080/users')
+    fetch('http://localhost:8080/users')
     .then(response => response.json())
     .then(users => {
         // Kullanıcıyı bul
@@ -35,22 +35,38 @@ fetch('http://localhost:8080/users')
         if (user && user.password === password) {
             
             console.log(user.userId);
+
+            
             fetch('http://localhost:8080/learners')
             .then(response => response.json())
             .then(learners => {
                 // Verileri HTML içerisine yerleştir
-                let learner = learners.find(learner => learner.userId === user.userId)
+                fetch('http://localhost:8080/teachers')
+                .then(response => response.json())
+                .then(teachers => {
+                    // Verileri HTML içerisine yerleştir
+                    let learner = learners.find(learner => learner.userId === user.userId)
 
-                localStorage.setItem('user', JSON.stringify(user));
-                if(learner)
-                {
-                    window.location.href = "http://localhost:8080/userProfilePage.html";
-                }
-                else
-                {
-                    window.location.href = "http://localhost:8080/teacher.html";
-                }
+                    let teacher = teachers.find(teacher => teacher.userId === user.userId)
 
+                    localStorage.setItem('user', JSON.stringify(user));
+                    if(learner)
+                    {
+                        window.location.href = "http://localhost:8080/userProfilePage.html";
+                    }
+                    else if(teacher)
+                    {
+                        window.location.href = "http://localhost:8080/teacher.html";
+                    }
+                    else
+                    {
+                        window.location.href = "http://localhost:8080/admin.html";
+                    }
+    
+                })
+                .catch(error => console.error('Hata:', error));
+
+   
 
             })
             .catch(error => console.error('Hata:', error));

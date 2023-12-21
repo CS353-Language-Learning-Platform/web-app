@@ -49,7 +49,7 @@ public class LanguageRepository {
     }
 
     public List<TargetLanguageInfoDTO> getAllTargetLanguagesByUserId(Long userId) {
-        String sql = "SELECT language.language_id, language.language_name, target_language.proficiency_level FROM language JOIN target_language ON target_language.language_id = language.language_id WHERE target_language.learner_id = ?";
+        String sql = "SELECT language.language_id, target_language.learner_id, target_language.proficiency_level FROM language JOIN target_language ON target_language.language_id = language.language_id WHERE target_language.learner_id = ?";
         return jdbcTemplate.query(sql, new Object[]{userId}, (rs, rowNum) -> {
             TargetLanguageInfoDTO targetLanguageInfoDTO = new TargetLanguageInfoDTO();
             targetLanguageInfoDTO.setLanguageId(rs.getInt("language_id"));

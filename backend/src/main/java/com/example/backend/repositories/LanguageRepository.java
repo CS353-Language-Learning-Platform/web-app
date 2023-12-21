@@ -53,7 +53,7 @@ public class LanguageRepository {
         return jdbcTemplate.query(sql, new Object[]{userId}, (rs, rowNum) -> {
             TargetLanguageInfoDTO targetLanguageInfoDTO = new TargetLanguageInfoDTO();
             targetLanguageInfoDTO.setLanguageId(rs.getInt("language_id"));
-            targetLanguageInfoDTO.setLanguageName(rs.getString("language_name"));
+            targetLanguageInfoDTO.setLearnerId(rs.getInt("learner_id"));
             targetLanguageInfoDTO.setProficiencyLevel(rs.getString("proficiency_level"));
             return targetLanguageInfoDTO;
         });

@@ -77,7 +77,7 @@ public class UserRepository {
     }
 
     public List<User> getAllUsers() {
-        String sql = "SELECT user_id, email FROM user";
+        String sql = "SELECT user_id, name, email, biography, nationality, birth_date, password FROM user";
         return jdbcTemplate.query(sql, userRowMapper());
     }
 
@@ -97,9 +97,10 @@ public class UserRepository {
         return (rs, rowNum) -> {
             User user = new User();
             user.setUserId(rs.getLong("user_id"));
+            user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
+            user.setBiography(rs.getString("biography"));
 
-            // Set other fields of User
             return user;
         };
     }

@@ -166,7 +166,7 @@ CREATE TABLE appointment(
     is_approved BIT(1),
     sender_rating INT,
     receiver_rating INT,
-    PRIMARY KEY(sender_id , receiver_id),
+    PRIMARY KEY(sender_id , receiver_id , start_time),
     FOREIGN KEY (sender_id) REFERENCES language_learner(user_id),
     FOREIGN KEY (receiver_id ) REFERENCES language_learner(user_id)
 );

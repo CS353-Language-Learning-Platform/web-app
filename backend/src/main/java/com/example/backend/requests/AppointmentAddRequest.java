@@ -1,13 +1,11 @@
-package com.example.backend.models;
+package com.example.backend.requests;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 
 @Getter
-@Setter
-public class Appointment {
+public class AppointmentAddRequest {
 
     private Long senderId;
     private Long receiverId;

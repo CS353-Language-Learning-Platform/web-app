@@ -46,9 +46,64 @@ function addUser() {
         console.log('Response Headers:', response.headers);
     })
     .then(data => {
-        console.log(data.userId);
-})
-.catch((error) => console.error('Hata:', error));
 
-    
+        fetch('http://localhost:8080/users')
+    .then(response => response.json())
+    .then(users => {
+        // Kullanıcıyı bul
+        let user = users.find(user => user.email === email);
+        console.log(user.userId);
+
+         if(userType == "en")
+         {
+            let learnerAddRequest = {
+                userId: user.userId
+             };
+            fetch('http://localhost:8080/learners', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(learnerAddRequest)
+            })
+            .then(response => {
+                console.log('Response Headers:', response.headers);
+            })
+            .then(data => {
+        
+              //  window.location.href = "http://localhost:8080/login.html";
+            }).catch(error => console.error('Hata:', error));
+         
+         }
+         else
+         {
+            let teacherAddRequest = {
+                userId: user.userId,
+                isApproved: true
+             };
+            fetch('http://localhost:8080/teachers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(teacherAddRequest)
+            })
+            .then(response => {
+                console.log('Response Headers:', response.headers);
+            })
+            .then(data => {
+        
+              //  window.location.href = "http://localhost:8080/login.html";
+            }).catch(error => console.error('Hata:', error));
+         
+         }
+       
+    })
+    .catch(error => console.error('Hata:', error));
+      
+})
+.catch((error) => console.error('Hata:', error))
+
+
+
 }

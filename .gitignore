@@ -5,3 +5,4 @@
 /backend/.idea/jarRepositories.xml
 /backend/.idea/encodings.xml
 /backend/.idea/compiler.xml
+*.class

@@ -22,8 +22,73 @@ function offerSession(id) {
 }
 function searchStudentsOnly(id)
 {
-  document.getElementById(id).style.display = 'block';
-  
+    let user;
+    fetch('http://localhost:8080/users')
+    .then(response => response.json())
+    .then(users => {
+         user = users;
+      })
+      .catch((error) => console.error('Hata:', error));
+
+    fetch('http://localhost:8080/learners')
+    .then(response => response.json())
+    .then(learners => {
+      for(let i = 0; i < learners.length; i++)
+      {
+          var apiUrl = 'http://localhost:8080/languages/target/' + learners[i].userId;
+          fetch(apiUrl)
+          .then(response => response.json())
+          .then(users => {
+              // Kullanıcıyı bul
+
+              if( users[0] && users[0].languageId == 2)
+              {
+                console.log("created");
+
+                let studentInfoUl = document.getElementById('studentInfo');
+                let languageId = 3;
+
+                // Yeni li öğesini oluştur
+                let li = document.createElement('li');
+                li.className = 'search-results';
+
+                // Bilgi div'i oluştur
+                let infoDiv = document.createElement('div');
+                infoDiv.className = 'info';
+
+                // İsim span'ı oluştur
+                let nameSpan = document.createElement('span');
+                nameSpan.className = 'name';
+                nameSpan.textContent = user[learners[i].userId].name;
+
+                // Dil span'ı oluştur
+                let languageSpan = document.createElement('span');
+                languageSpan.className = 'language';
+                languageSpan.textContent = 'Target Language-+>English ';
+
+                // Buton oluştur
+                let button = document.createElement('button');
+                button.className = 'offer-button';
+                button.onclick = function() { offerSession('offer-results'); };
+                button.textContent = 'Offer Session';
+
+                // Elementleri birleştir
+                infoDiv.appendChild(nameSpan);
+                infoDiv.appendChild(languageSpan);
+                li.appendChild(infoDiv);
+                li.appendChild(button);
+
+                // Yeni li öğesini ul içine ekle
+                studentInfoUl.appendChild(li);
+                //user[learners[i].userId].name; // Öğrencinin adını kullan
+               
+              }
+            })
+            .catch((error) => console.error('Hata:', error));
+
+      }
+    })
+    .catch(error => console.error('Hata:', error));
 }
 // Declare variables in the global scope
 var modal;

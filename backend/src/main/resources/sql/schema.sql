@@ -1,10 +1,10 @@
-
+-- ALTER TABLE languagestats DROP FOREIGN KEY languagestats_ibfk_1;
+DROP TABLE IF EXISTS language_stats;
 DROP TABLE IF EXISTS notification;
 DROP TABLE IF EXISTS learning_session;
 DROP TABLE IF EXISTS target_language;
 DROP TABLE IF EXISTS native_language;
 DROP TABLE IF EXISTS knows;
-DROP TABLE IF EXISTS language;
 DROP TABLE IF EXISTS feedback;
 DROP TABLE IF EXISTS resource;
 DROP TABLE IF EXISTS announcement;
@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS language_learner;
 DROP TABLE IF EXISTS teacher;
 DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS language;
 
 
 CREATE TABLE user (
@@ -171,5 +172,13 @@ CREATE TABLE appointment(
     FOREIGN KEY (receiver_id ) REFERENCES language_learner(user_id)
 );
 
+CREATE TABLE language_stats (
+   language_id INT PRIMARY KEY,
+   language_name VARCHAR(255),
+   learner_count INT DEFAULT 0,
+   FOREIGN KEY (language_id) REFERENCES language(language_id)
+);
 
+CREATE TRIGGER increment_learner_count AFTER INSERT ON target_language FOR EACH ROW UPDATE language_stats SET learner_count = learner_count + 1 WHERE language_id = NEW.language_id;
 
+CREATE TRIGGER decrement_learner_count AFTER DELETE ON target_language FOR EACH ROW UPDATE language_stats SET learner_count = learner_count - 1 WHERE language_id = OLD.language_id;

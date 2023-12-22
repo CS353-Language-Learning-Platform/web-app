@@ -27,21 +27,20 @@
       <div class="info">
         <!--  action="/search" method="get"-->
         <div class="search-button-place">
-        <input type="search" name="q" placeholder="Search">
+        <input type="search" id="searchInput" name="q" placeholder="Search">
         <button onclick="searchStudentsOnly('studentInfo')">Search</button>
       </div>
       </div>
       </form>
-      <ul class="search-results-header" id="studentInfo" style="display: none;" >
-        <li class="search-results" >
+      <ul class="search-results-header" id="studentInfo"  >
+       <!-- <li class="search-results" >
             <div class="info">
                 <span class="name">JACKIE</span>
-                <span class="country">US</span>
-                <span class="language">Want to learn ----</span>
+                <span class="language">Target Language --+> </span>
             </div>
             <button class="offer-button" onclick="offerSession('offer-results')"  >Offer Session</button>
         </li>
-        <!-- Yeni liste öğesi -->
+        Yeni liste öğesi -->
         
     </ul>
     </div>
@@ -55,7 +54,7 @@
         <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="#">Profile Settings</a>
+        <a class="nav-link" href="login.html">Logout</a>
       </li>
     </ul>    
   </div>

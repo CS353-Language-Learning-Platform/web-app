@@ -22,67 +22,8 @@ function offerSession(id) {
 }
 function searchStudentsOnly(id)
 {
-  var searchInput = document.getElementById('searchInput');
-  var searchTerm = searchInput.value;
-    let user;
-    fetch('http://localhost:8080/users')
-    .then(response => response.json())
-    .then(users => {
-         user = users;
-      })
-      .catch((error) => console.error('Hata:', error));
-
-    fetch('http://localhost:8080/learners')
-    .then(response => response.json())
-    .then(learners => {
-      for(let i = 0; i < learners.length; i++)
-      {
-          var apiUrl = 'http://localhost:8080/languages/target/' + learners[i].userId;
-        
-          fetch(apiUrl)
-          .then(response => response.json())
-          .then(users => {
-              // Kullanıcıyı bul
-              console.log(users[0].languageId);
-              if( users[0] && ( users[0].languageId == 2 && searchTerm == "english" ) ||
-              ( users[0].languageId == 1 && searchTerm == "turkish" ) ||
-              ( users[0].languageId == 3 && searchTerm == "french" ) ||
-              ( users[0].languageId == 4 && searchTerm == "russian" ) )
-              {             
-                let studentInfoUl = document.getElementById('studentInfo');
-                let languageId = 3;
-                // Yeni li öğesini oluştur
-                let li = document.createElement('li');
-                li.className = 'search-results';
-                // Bilgi div'i oluştur
-                let infoDiv = document.createElement('div');
-                infoDiv.className = 'info';
-                // İsim span'ı oluştur
-                let nameSpan = document.createElement('span');
-                nameSpan.className = 'name';
-                nameSpan.textContent = user[learners[i].userId].name;
-                // Dil span'ı oluştur
-                let languageSpan = document.createElement('span');
-                languageSpan.className = 'language';
-                languageSpan.textContent = 'Target Language-+>English ';
-                // Buton oluştur
-                let button = document.createElement('button');
-                button.className = 'offer-button';
-                button.onclick = function() { offerSession('offer-results'); };
-                button.textContent = 'Offer Session';
-                // Elementleri birleştir
-                infoDiv.appendChild(nameSpan);
-                infoDiv.appendChild(languageSpan);
-                li.appendChild(infoDiv);
-                li.appendChild(button);
-                // Yeni li öğesini ul içine ekle
-                studentInfoUl.appendChild(li);       
-              }
-            })
-            .catch((error) => console.error('Hata:', error));
-      }
-    })
-    .catch(error => console.error('Hata:', error));
+  document.getElementById(id).style.display = 'block';
+  
 }
 // Declare variables in the global scope
 var modal;

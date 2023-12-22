@@ -1,34 +1,10 @@
-
-let user;
-
 function myFunction() {
-// Get the select element
-var selectElement = document.querySelector('.language-select select');
-let languageIds = 2;
-// Add an event listener for the change event
-
-if(selectElement.value == "en")
-{
-  languageIds = 2;
-}
-else if(selectElement.value == "fr")
-{
-  languageIds = 3;
-}
-else if(selectElement.value == "ru")
-{
-  languageIds = 4;
-}
-else if(selectElement.value == "tr")
-{
-  languageIds = 1;
-}
   var targetLanguageAddRequest = {
-    languageId: languageIds,
-    learnerId: user.userId,
-    proficiencyLevel: "Beginner"
+    languageId: 1,
+    learnerId: 1,
+    proficiencyLevel: "Medium"
   };
-  console.log(user.userId);
+  
   fetch('http://localhost:8080/languages/target', {
       method: 'POST',
       headers: {
@@ -81,7 +57,7 @@ function follow(id) {
 // Function to show the buy session modal
 window.onload = function() {
 
-   user = JSON.parse(localStorage.getItem('user'));
+  let user = JSON.parse(localStorage.getItem('user'));
 
       // Verileri HTML içerisine yerleştir
       document.getElementById('fullname').value = user.name;

@@ -13,11 +13,11 @@ if(selectElement.value == "en")
 }
 else if(selectElement.value == "fr")
 {
-  languageIds = 4;
+  languageIds = 3;
 }
 else if(selectElement.value == "ru")
 {
-  languageIds = 3;
+  languageIds = 4;
 }
 else if(selectElement.value == "tr")
 {
